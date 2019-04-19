@@ -10,14 +10,15 @@ Installing this extension from source:
 1. Go to Extensions in Chrome
 2. Turn "Developer mode" on
 3. Click "Load unpacked extension" and (after downloading the zip file or cloning it from this Gitub repo) point it to the folder "ContextualizeHTML"
-4. Go to https://www.w3schools.com/ and click on the icon designated for this chrome extension (looks like computer screen with a </> tag). You can toggle what kind of output you would like to see (different levels of abstraction from the baseline examples) through the pop up menu that drops down from the Chrome extension icon. 
+4. Go to https://www.w3schools.com/ and click on the icon designated for this Chrome extension (looks like computer screen with a </> tag). You can toggle what kind of output you would like to see (different levels of abstraction from the baseline examples) through the pop up menu that drops down from the Chrome extension icon. 
 
 
-Installing the ChromeVox screen reader to test this chrome extension
+Installing the ChromeVox screen reader to test this Chrome extension
 ------------------------------------
 
-1. Go to [chrome webstore](https://chrome.google.com/webstore)
+1. Go to the [Chrome Webstore](https://chrome.google.com/webstore)
 2. Search for ChromeVox
 3. Click "Add to Chrome" next to ChromeVox extension 
+
 *note, the only way to disable the voice for ChromeVox screen reader is to entirely disable the extension 
 *resources for learning ChromeVox can be found at [here](http://www.chromevox.com/tutorial/), [here](http://www.chromevox.com/navigating.html), and [here](https://www.chromevox.com/keyboard_shortcuts.html)
