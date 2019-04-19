@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // document.getElementById('status').textContent = "Extension loaded";
     
     // https://www.w3.org/TR/2016/WD-wai-aria-practices-1.1-20160317/examples/radio/radio.html
     // code below: how to make radio buttons more accessible (code from link above)
@@ -311,7 +310,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
         chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
             chrome.tabs.sendMessage(tabs[0].id, {data: args}, function(response) {
-                // $('#here').html('changed data in page');
                 console.log('reset success');
             });
         });
@@ -325,11 +323,9 @@ document.addEventListener('DOMContentLoaded', function() {
         var abst;
         var args; 
         for (var i = 0, length = abstraction.length; i < length; i++) {
-            // console.log(abstraction[i].getAttribute('aria-checked') === "true");
             if (abstraction[i].getAttribute('aria-checked') === "true") {
                 console.log(abstraction[i].getAttribute("value"))
                 abst = `${abstraction[i].getAttribute("value")}`
-                // console.log(abstraction[i].value);
             }
         }
         console.log(abst)
@@ -346,7 +342,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
             chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
                 chrome.tabs.sendMessage(tabs[0].id, {data: args}, function(response) {
-                    // $('#here').html('changed data in page');
                     console.log('low success');
                 });
             });
@@ -358,7 +353,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     op.addEventListener('click', function () {
-        // console.log("CLICKMEd")
         var options = document.querySelectorAll('.options');
         var opts = {
             "level": "high",
@@ -370,10 +364,8 @@ document.addEventListener('DOMContentLoaded', function() {
         for (var i = 0, length = options.length; i < length; i++) {
             if (options[i].getAttribute('aria-checked') === "true") {
                 opts[options[i].getAttribute("value")] = true; 
-                // console.log(abstraction[i].value);
             }
         }
-        // console.log(opts)
         args = opts; 
 
         resetNode.style.display = "block";
@@ -383,7 +375,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
         chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
             chrome.tabs.sendMessage(tabs[0].id, {data: args}, function(response) {
-                // $('#here').html('changed data in page');
                 console.log('high success');
             });
         });

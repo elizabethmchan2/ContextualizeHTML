@@ -85,7 +85,7 @@ function preprocess(contextualizeMe) {
     }
     console.log(HTMLchunks)
     // now separate the tags and their resepctive attributes and the innerHTML 
-    var almostTokenized = []
+    var tokenized = []
     // console.log(HTMLchunks)
     for (var l = 0; l < HTMLchunks.length; l++) {
         var token = HTMLchunks[l];
@@ -121,15 +121,15 @@ function preprocess(contextualizeMe) {
             }
         }
         part = []
-        almostTokenized.push(tag)
+        tokenized.push(tag)
     }
 
     // finally, separate the inner css from the tag itself 
     //find where the inner css exists and mark it in array
     var style_indices = [];
-    for (var p = 0; p < almostTokenized.length; p++) {
-        if (almostTokenized[p].hasOwnProperty("opening")) {
-            var openingTag = almostTokenized[p].opening
+    for (var p = 0; p < tokenized.length; p++) {
+        if (tokenized[p].hasOwnProperty("opening")) {
+            var openingTag = tokenized[p].opening
 
             for (var q = 0; q < openingTag.length; q++) {
                 var check = openingTag[q].split("=")
@@ -147,7 +147,7 @@ function preprocess(contextualizeMe) {
     if (style_indices.length > 0) {
         for (var r = 0; r < style_indices.length; r++) {
 
-            var styles = almostTokenized[r].opening[1].split(" ") //split on space between the tag word and the style keyword for inline css
+            var styles = tokenized[r].opening[1].split(" ") //split on space between the tag word and the style keyword for inline css
 
             var l = styles[1].length
 
@@ -160,7 +160,7 @@ function preprocess(contextualizeMe) {
                 var str = `inline css with a ${attribute} of ${splitP[1]}`;
                 // console.log(str)
             } else { 
-                var styles = almostTokenized[r].opening[1].split(" ") //split on space between the tag word and the style keyword for inline css
+                var styles = tokenized[r].opening[1].split(" ") //split on space between the tag word and the style keyword for inline css
                
 
                 var sp = styles[1].split(/"/)
@@ -172,16 +172,16 @@ function preprocess(contextualizeMe) {
             var n = []
             n.push(str)
 
-            var t = `${almostTokenized[r].opening[1].split(" ")[0]} that has ${n}`
+            var t = `${tokenized[r].opening[1].split(" ")[0]} that has ${n}`
             var final = []
             final.push(t)
-            almostTokenized[r].opening[1] = t;
+            tokenized[r].opening[1] = t;
         }
     }
 
-    console.log(almostTokenized)
+    console.log(tokenized)
 
-    return almostTokenized;
+    return tokenized;
 
 
 
@@ -411,11 +411,12 @@ function parseTable_high(tokenized, opts) {
 
 }
 
+//insert node before another node
 function insertBefore(el, referenceNode) {
     referenceNode.parentNode.insertBefore(el, referenceNode);
 }
 
-
+//will call separate parsing functions depending on type of input and then will change the innerHTML accordingly 
 function contextualize(opts, changedCode) {
     // var changedCode = allCode.querySelectorAll('.w3-code.htmlHigh');
     var len = changedCode.length;
@@ -482,6 +483,7 @@ function contextualize(opts, changedCode) {
     return false;
 }
 
+//reset to the original HTML code 
 function getOriginal(changedCode) {
     var len = changedCode.length;
     for (var y = 0; y < len; y++) {
@@ -498,14 +500,13 @@ function getOriginal(changedCode) {
     }
 }
 
+//main function!!!! woooooooo
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     console.log("something happening from the extension");
     
     var data = request.data || {};
 
     var parseMe = document.querySelectorAll(".w3-code.htmlHigh");
-    // console.log("PARSEME")
-    // console.log(parseMe)
     if (data.level === "low") {
         console.log("LOW")
         contextualize(["low"], parseMe)
