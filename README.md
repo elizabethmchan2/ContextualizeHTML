@@ -9,7 +9,7 @@ Installing this extension from source:
 
 1. Go to Extensions in Chrome
 2. Turn "Developer mode" on
-3. Click "Load unpacked extension" and (after downloading the zip file or cloning it from the Gitub repo) point it to the folder "ElizabethChan-ContextualizeHTML"
+3. Click "Load unpacked extension" and (after downloading the zip file or cloning it from the Gitub repo) point it to the folder "ContextualizeHTML"
 4. Go to https://www.w3schools.com/ and click on the icon designated for this chrome extension (looks like computer screen with a </> tag). You can toggle what kind of output you would like to see (different levels of abstraction from the baseline examples) through the pop up menu that drops down from the Chrome extension icon. 
 
 
