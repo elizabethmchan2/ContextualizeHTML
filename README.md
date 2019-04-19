@@ -20,5 +20,9 @@ Installing the ChromeVox screen reader to test this Chrome extension
 2. Search for ChromeVox
 3. Click "Add to Chrome" next to ChromeVox extension 
 
-*note, the only way to disable the voice for ChromeVox screen reader is to entirely disable the extension 
-*resources for learning ChromeVox can be found at [here](http://www.chromevox.com/tutorial/), [here](http://www.chromevox.com/navigating.html), and [here](https://www.chromevox.com/keyboard_shortcuts.html)
+
+
+Other Notes and Additional Information
+------------------------------------
+- Unfortunately, the only way to disable the voice for ChromeVox screen reader is to entirely disable the extension; additionally, you can temporarily stop the ChromeVox voice by clicking control
+- Resources for learning how to use ChromeVox can be found [in this tutorial](http://www.chromevox.com/tutorial/), and [this overview](http://www.chromevox.com/navigating.html). You can find information about hotkeys [here](https://www.chromevox.com/keyboard_shortcuts.html)
