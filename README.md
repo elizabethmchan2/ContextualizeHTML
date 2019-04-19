@@ -1,7 +1,7 @@
 # Elizabeth Chan - Thesis Project 
 ------------------------------------
 
-This is a Chrome extension that can be used to contextualize HTML code. Its purpose is for people who are visually-impaired/blind and would like to use the [w3schools website](https://www.w3schools.com/) as a resource to learn HTML. The screen reader, ChromeVox, can be used to test to see how the speech differentiates before the HTML is processed by the extension and after it is processed. 
+This is a Chrome extension that can be used to contextualize HTML code. Its purpose is for people who are visually-impaired/blind and would like to use the [W3Schools' website](https://www.w3schools.com/) as a resource to learn HTML. The screen reader, ChromeVox, can be used to test to see how the speech differentiates before the HTML is processed by the extension and after it is processed. 
 
 
 Installing this extension from source:
