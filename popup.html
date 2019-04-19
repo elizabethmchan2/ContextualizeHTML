@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	
+  <style>
+
+	body {
+		width: 325px;
+	}
+
+	[role=radio] {
+		display: block;
+		position: relative;
+		margin: 0.5em;
+		padding-left: 20px;
+		border: thin transparent solid;
+	}
+
+  /* This creates the visuals for the radio buttons */
+	[role=radio]::before,
+	[role=radio]::after {
+		display: block;
+		position: absolute;
+		border-radius: 50%;
+		content: '';
+	}
+
+	[role=radio]::before {
+		top: 0;
+		left: 0;
+		width: 14px;
+		height: 14px;
+		border: 1px solid #000;
+		background: #fff;
+	}
+
+	[role=radio][aria-checked=true]::after {
+		top: 3px;
+		left: 3px;
+		border: 5px solid #000;
+		content: '';
+	}
+
+	#codeex{
+		background-color: #F1F1F1 ;
+		padding:10px;
+	}
+
+	div[role=checkbox] {
+		margin: 0;
+		padding: 0;    
+		border: 2px transparent solid;
+	}
+
+	div[role=checkbox]:active {
+		background-color: #bbb;
+	}
+	
+	div[role=checkbox]:hover {
+		border-color: #777;
+	}
+
+	div[role=checkbox].focus {
+		border-color: black;
+	}
+	img { 
+		width: 10%;
+		height: 10%;
+	}
+  </style>
+</head>
+</head>
+
+<body>
+
+  <h4>Contextualize HTML Code -- Chrome Extension</h4>
+  <h5> 
+	Please choose a level of abstraction 
+	<br>
+	low level of abstraction will give you more details <br>
+	high level of abstraction will provide more of an overview of the code 
+	<br>
+	click space bar to select a radio button
+  </h5>
+  <button id ="reset"> Reset </button>
+
+  <div id = "levelOf" role="radiogroup" aria-labelledby="abstractions">
+
+	<div role="radio" aria-checked="false" tabindex="0" name="low abstraction" class="abstraction" value="low">
+	  Low level
+	</div>
+	<!-- <input type="radio" name="low abstraction" class="abstraction" value="low"> </input> -->
+	<br>
+	<!-- <input type="radio" name="high abstraction" class="abstraction" value="high"> <label for="high level">High level</label>   </input> -->
+	<div role="radio" aria-checked="false" tabindex="-1" name="high abstraction" class="abstraction" value="high">
+		High level
+	  </div>
+	<br />
+  </div>
+  <button id="sub"> Submit </button>
+
+
+  <div id="getTO" style="display: none">
+	  <h5> Options for Viewing -- tailored for tables but can also work with other tags
+		<br>
+		Click space bar to select a checkbox button
+	  </h5>
+	  <div id="getOptions" role="checkboxgroup" aria-labelledby="options"></div>
+		<div role="checkbox"
+			aria-checked="false"
+			tabindex="0"
+			name="summary option" 
+			class="options" 
+			value="headings"
+			>
+			<img src="./unchecked.png" alt="unchecked/checked box image">
+			Include summary
+		</div>
+		<div role="checkbox"
+			aria-checked="true"
+			tabindex="0"
+			name="rows and columns option" 
+			class="options" 
+			value="rowscols">
+			<img src="./unchecked.png" alt="unchecked/checked box image">
+			Include rows and columns
+		</div>
+		<div role="checkbox"
+			aria-checked="false"
+			tabindex="0"
+			name="only data option" 
+			class="options" 
+			value="data"> 
+			<img src="./unchecked.png" alt="unchecked/checked box image">
+			Include data
+		</div>
+		<button id="op"> Submit </button>
+	</div>
+
+  <!-- <button id ="reset"> Reset </button> -->
+
+  <script src="/scripts/jquery.min.js" type="text/javascript"></script>
+  <script src="/scripts/popup.js" type="text/javascript"></script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+{
+    "manifest_version": 2,
+    "name": "Contextualize HTML",
+    "description": "This is a Chrome extension that can be used to contextualize HTML code. It's purpose is for people who are visually-impaired/blind and would like to use the w3schools website as a resource to learn HTML.",
+    "version": "1.0",
+    "author": "Elizabeth M. Chan - Bryn Mawr College Class of 2019",
+    "homepage_url": "https://github.com/elizabethmchan2/ElizabethChan-ContextualizeHTML",
+    "browser_action": {
+        "default_icon": "favicon.png",
+        "default_popup": "popup.html",
+        "default_title": "Contextualize HTML"
+    },
+    "content_scripts": [{
+        "matches": ["*://www.w3schools.com/*"],
+        "all_frames": true,
+        "js":      ["scripts/content.js"]
+    }],
+    "permissions": [
+        "activeTab"
+    ],
+    "content_security_policy": "script-src 'self' https://www.gstatic.com/; object-src 'self'",
+    "icons": {
+        "16": "favicon.png",
+        "48": "favicon.png",
+        "128": "favicon.png"
+      }
+}
+
